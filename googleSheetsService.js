@@ -10,6 +10,13 @@ async function getAuthToken() {
   return authToken;
 }
 
+async function createNewSheetsClient() {
+  const auth = await getAuthToken();
+
+  return google.sheets({ version: "v4", auth });
+}
+
 module.exports = {
   getAuthToken,
+  createNewSheetsClient,
 };

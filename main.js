@@ -1,4 +1,4 @@
-const { createNewSheetsClient } = require("./googleSheetsService");
+import { createNewSheetsClient } from "./googleSheetsService.js";
 
 // test get and write sheets value
 async function printSheets() {

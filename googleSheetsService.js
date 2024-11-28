@@ -1,7 +1,7 @@
-const { google } = require("googleapis");
+import { google } from "googleapis";
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
-async function getAuthToken() {
+export async function getAuthToken() {
   const auth = new google.auth.GoogleAuth({
     keyFile: "./service_account_secret.json",
     scopes: SCOPES,
@@ -10,13 +10,8 @@ async function getAuthToken() {
   return authToken;
 }
 
-async function createNewSheetsClient() {
+export async function createNewSheetsClient() {
   const auth = await getAuthToken();
 
   return google.sheets({ version: "v4", auth });
 }
-
-module.exports = {
-  getAuthToken,
-  createNewSheetsClient,
-};

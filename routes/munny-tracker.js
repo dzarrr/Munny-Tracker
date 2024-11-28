@@ -1,24 +1,13 @@
 import express from "express";
+import { getCell } from "../controllers/munnyTrackerController.js";
 
 const router = express.Router();
 
-// Get all posts
-router.get("/", (req, res, next) => {
-  res.status(200).json({
-    msg: "success",
-  });
-});
+// Get cash flow
+router.get("/:year/:month/:date", getCell);
 
-// // Get single post
-// router.get("/:id", getPost);
+// Append cash flow
 
-// // Create new post
-// router.post("/", createPost);
-
-// // Update Post
-// router.put("/:id", updatePost);
-
-// // Delete Post
-// router.delete("/:id", deletePost);
+// Create new sheets
 
 export default router;

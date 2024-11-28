@@ -1,5 +1,5 @@
 import express from "express";
-import posts from "./routes/money-tracker.js";
+import posts from "./routes/munny-tracker.js";
 import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/error.js";
 import notFound from "./middleware/notFound.js";
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(logger);
 
 // Routes
-app.use("/api/money-tracker", posts);
+app.use("/api/munny-tracker", posts);
 
 // Error handler
 app.use(notFound);
